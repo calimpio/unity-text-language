@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,25 +6,31 @@ using UnityEngine.UI;
 public class Languages : MonoBehaviour
 {
 
-    public enum LanguagesTags{
-        es,en
+    public enum LanguagesTags
+    {
+        es, en
     }
 
-    public enum TextLanguageTag{
-        welcome,exit,start,
+    public enum TextLanguagesTags
+    {
+        welcome, exit, start,
     }
-    
-    public static Dictionary<TextLanguageTag,Dictionary<LanguagesTags,string>> TextTagLanguage = new Dictionary<TextLanguageTag, Dictionary<LanguagesTags,string>>(){
-        {TextLanguageTag.welcome,         InsterLaguage("Bienvenido","Welcome")},
-        {TextLanguageTag.exit,            InsterLaguage("Salir","Exit")},
-        {TextLanguageTag.start,           InsterLaguage("Iniciar Sesion","Start")},
+
+
+    public static Dictionary<TextLanguagesTags, Dictionary<LanguagesTags, string>> TextTagLanguage = new Dictionary<TextLanguagesTags, Dictionary<LanguagesTags, string>>()
+    {
+        {TextLanguagesTags.welcome,         InsterLaguage("Bienvenido","Welcome")},
+        {TextLanguagesTags.exit,            InsterLaguage("Salir","Exit")},
+        {TextLanguagesTags.start,           InsterLaguage("Iniciar Sesion","Start")},
     };
 
-    
-    public static void SetLanguages(LanguagesTags lang){
+
+    public static void SetLanguages(LanguagesTags lang)
+    {
         var textsLaguagues = GameObject.FindObjectsOfType(typeof(TextLanguage));
-        foreach(TextLanguage tl in textsLaguagues){
-           if (TextTagLanguage.ContainsKey(tl.LanguageTag))
+        foreach (TextLanguage tl in textsLaguagues)
+        {
+            if (TextTagLanguage.ContainsKey(tl.LanguageTag))
             {
                 var text = TextTagLanguage[tl.LanguageTag][lang];
 
@@ -63,12 +69,12 @@ public class Languages : MonoBehaviour
                     tl.GetComponentInChildren<TMPro.TextMeshPro>().text = text;
                 }
             }
-           
         }
     }
 
-    private static Dictionary<LanguagesTags,string> InsterLaguage(string es,string en){
-        return new Dictionary<LanguagesTags,string>(){{LanguagesTags.es,es},{LanguagesTags.en,en}};
+    private static Dictionary<LanguagesTags, string> InsterLaguage(string es, string en)
+    {
+        return new Dictionary<LanguagesTags, string>() { { LanguagesTags.es, es }, { LanguagesTags.en, en } };
     }
 
     
