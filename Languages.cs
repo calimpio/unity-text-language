@@ -57,7 +57,7 @@ public class Languages : MonoBehaviour
                     tl.GetComponentInChildren<TMPro.TextMeshPro>().text = text;
                 }
             }
-            }
+           
         }
     }
 
