@@ -13,6 +13,12 @@ public class Languages : MonoBehaviour
     public enum TextLanguageTag{
         welcome,exit,start,
     }
+    
+    public static Dictionary<TextLanguageTag,Dictionary<LanguagesTags,string>> TextTagLanguage = new Dictionary<TextLanguageTag, Dictionary<LanguagesTags,string>>(){
+        {TextLanguageTag.welcome,         InsterLaguage("Bienvenido","Welcome")},
+        {TextLanguageTag.exit,            InsterLaguage("Salir","Exit")},
+        {TextLanguageTag.start,           InsterLaguage("Iniciar Sesion","Start")},
+    };
 
     
     public static void SetLanguages(LanguagesTags lang){
@@ -65,10 +71,6 @@ public class Languages : MonoBehaviour
         return new Dictionary<LanguagesTags,string>(){{LanguagesTags.es,es},{LanguagesTags.en,en}};
     }
 
-    public static Dictionary<TextLanguageTag,Dictionary<LanguagesTags,string>> TextTagLanguage = new Dictionary<TextLanguageTag, Dictionary<LanguagesTags,string>>(){
-        {TextLanguageTag.welcome,         InsterLaguage("Bienvenido","Welcome")},
-        {TextLanguageTag.exit,            InsterLaguage("Salir","Exit")},
-        {TextLanguageTag.start,           InsterLaguage("Iniciar Sesion","Start")},
-    };
+    
 
 }
