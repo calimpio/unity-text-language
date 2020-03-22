@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TextLanguage : MonoBehaviour
 {
 
-    public Languages.TextLanguageTag LanguageTag;
+    public Languages.TextLanguagesTags LanguageTag;
     // Start is called before the first frame update
     
     void Start()
